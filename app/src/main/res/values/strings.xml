@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BarCodeScanningApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="scan">Scan</string>
+    <string name="naziv_servera">Server:</string>
+    <string name="firma">Firma/Objekat:</string>
+    <string name="radna_godina">Radna godina:</string>
+    <string name="dugme_spoji_se">Spoji se</string>
+    <string name="ProvjeriStanje">Provjeri stanje</string>
+</resources>

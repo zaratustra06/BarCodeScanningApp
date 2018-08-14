@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <Button android:id="@+id/scan_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/scan" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ProvjeriStanje"
+        android:id="@+id/stanje"
+        android:layout_below="@+id/scan_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp" />
+    <TextView
+        android:id="@+id/scan_format"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textIsSelectable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/scan_button" />
+    <TextView
+        android:id="@+id/scan_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textIsSelectable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/scan_format"
+        android:visibility="invisible" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editBarKod"
+        android:layout_below="@+id/scan_content"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+
+</RelativeLayout>
+
