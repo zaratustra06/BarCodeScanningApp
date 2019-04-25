@@ -52,7 +52,7 @@ public class StanjeProvjera extends Activity {
 		server = preferences.getString("srv",null);
 //		BarKod = preferences.getString("barkod",null);
 		
-		url1 = "http://"+ server +":8000/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=10.0.0.3,6434;user%20id=bingo;password=SulciC25802%27).SQLRobno.dbo.StanjeJasmin%20WHERE%20ArKod%20=%20%27"+BarKod+"%27";
+		url1 = "http://"+ server +":8000/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=10.0.0.3,6434;user%20id=bingo;password=SulciC25802%27).SQLRobno.dbo.StanjeJasmin%20WHERE%20ArKod%20=%20%27"+BarKod+"%27%20order%20by%20Obj";
 		
 		obj = new HandleJSONStanjeProvjera(url1);
 	    obj.fetchJSON();

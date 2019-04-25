@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <Button android:id="@+id/scan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,15 +32,32 @@
         android:layout_below="@id/scan_format"
         android:visibility="invisible" />
 
-    <EditText
+    <!--<EditText-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/editBarKodOld"-->
+        <!--android:layout_below="@+id/scan_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:ems="10"-->
+        <!--android:textAlignment="center"-->
+        <!--android:gravity="center"/>-->
+        <!--app:autoFill="true"-->
+        <!--app:autoSave="true"-->
+        <!--app:rememberCount="3"-->
+        <!--app:rememberID="barcode"-->
+
+    <cn.zhaiyifan.rememberedittext.RememberEditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editBarKod"
         android:layout_below="@+id/scan_content"
         android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:textAlignment="center"
-        android:gravity="center" />
+        android:layout_marginTop="5dp"
+        android:hint="Scan ili unos barkoda"
+        android:inputType="text"
+        app:rememberCount="3"
+        app:rememberId="username" />
+
 
 
 </RelativeLayout>

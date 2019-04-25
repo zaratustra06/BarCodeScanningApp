@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 26
 
     defaultConfig {
         applicationId "com.example.jasmin.barcodescanningapp"
         minSdkVersion 15
-        targetSdkVersion 22
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -19,7 +18,18 @@ android {
     }
 }
 
+repositories {
+    jcenter()
+    maven {
+        url "https://maven.google.com"
+    }
+    mavenCentral()
+}
+
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:22.2.1'
+    implementation  fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.0.0'
+
+
+    implementation  'cn.zhaiyifan:rememberedittext:0.9.0'
 }
