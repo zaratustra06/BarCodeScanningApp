@@ -9,7 +9,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -51,10 +54,20 @@ public class StanjeProvjera extends Activity {
 //		Firma = preferences.getString("frm",null);
 		server = preferences.getString("srv",null);
 //		BarKod = preferences.getString("barkod",null);
-		
-		url1 = "http://"+ server +":8000/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=10.0.0.3,6434;user%20id=bingo;password=SulciC25802%27).SQLRobno.dbo.StanjeJasmin%20WHERE%20ArKod%20=%20%27"+BarKod+"%27%20order%20by%20Obj";
-		
-		obj = new HandleJSONStanjeProvjera(url1);
+
+
+
+
+//        if (IsItChecked)
+//        {
+//            url1 = "http://"+ server +":8000/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=10.0.0.3,6434;user%20id=bingo;password=SulciC25802%27).SQLRobno.dbo.StanjeJasmin%20WHERE%20ArKod%20=%20%27"+BarKod+"%27%20order%20by%20Obj";
+//
+//        }
+//        else {
+          url1 = "http://"+ server +":8001/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=192.168.10.8;user%20id=spin;password=SulciC21%27).Tehnograd2.dbo.StanjeJasmin%20WHERE%20ArKod%20=%20%27" + BarKod + "%27%20order%20by%20Obj";
+//        }
+
+        obj = new HandleJSONStanjeProvjera(url1);
 	    obj.fetchJSON();
 	    
 	    try{
