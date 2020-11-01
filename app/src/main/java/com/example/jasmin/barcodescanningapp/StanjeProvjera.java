@@ -25,6 +25,7 @@ public class StanjeProvjera extends Activity {
 	private String url1 = "";
 	private String server = "";
 	private String BarKod = "";
+	private String BingoIliBela = "";
 //	private String Firma = "";
 //	private String Konobar = "";
 	private HandleJSONStanjeProvjera obj;
@@ -53,19 +54,20 @@ public class StanjeProvjera extends Activity {
 		preferences = getSharedPreferences("text", 0);
 //		Firma = preferences.getString("frm",null);
 		server = preferences.getString("srv",null);
+		BingoIliBela = preferences.getString("BiB","Bingo");
 //		BarKod = preferences.getString("barkod",null);
 
 
 
 
-//        if (IsItChecked)
-//        {
-//            url1 = "http://"+ server +":8000/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=10.0.0.3,6434;user%20id=bingo;password=SulciC25802%27).SQLRobno.dbo.StanjeJasmin%20WHERE%20ArKod%20=%20%27"+BarKod+"%27%20order%20by%20Obj";
-//
-//        }
-//        else {
+       if (BingoIliBela == "Bela")
+       {
+           url1 = "http://"+ server +"/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=80.65.74.50;user%20id=spin;password=SulciC21%27).Spin.dbo.StanjeJasmin%20WHERE%20ArKod%20=%20%27"+BarKod+"%27%20order%20by%20Obj";
+
+       }
+       else {
           url1 = "http://"+ server +":8001/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=192.168.10.8;user%20id=spin;password=SulciC21%27).Tehnograd2.dbo.StanjeJasmin%20WHERE%20ArKod%20=%20%27" + BarKod + "%27%20order%20by%20Obj";
-//        }
+      }
 
         obj = new HandleJSONStanjeProvjera(url1);
 	    obj.fetchJSON();

@@ -7,13 +7,17 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.Toast;
 
 //import com.example.spinugost.*;
 
 public class MainActivity extends Activity {
 	
 	public final static String PROSLIJEDI_SERVER = "";
+	String BingoBela ="";
 //	public final static String PROSLIJEDI_FIRMU = "";
 
 	
@@ -34,6 +38,7 @@ public class MainActivity extends Activity {
 		
 		preferences = getSharedPreferences("text", 0);
 		String value = preferences.getString("srv",null);
+//		BingoBela = preferences.getString("bib", null);
 //		String valueFirma = preferences.getString("frm",null);
 //		String valueGodina = preferences.getString("god", null);
 		
@@ -45,7 +50,8 @@ public class MainActivity extends Activity {
 		} else {
 		    server.setText(value);
 		}
-		
+
+
 //		if (valueFirma == null) {
 //
 //			firma.setHint("Unesite firmu/objekat");
@@ -63,7 +69,21 @@ public class MainActivity extends Activity {
 //		} else {
 //		    godina.setText(valueGodina);
 //		}
-		
+
+		final Switch sw = findViewById(R.id.switch1);
+		if (sw != null) {
+			sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					String msg = isChecked ? "Bela" : "Bingo";
+					Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+					sw.setText(msg);
+					BingoBela = isChecked ?  "Bela" : "Bingo";
+				}
+			});
+		}
+
+
 	}
 	
 	public void run(View view){
@@ -73,6 +93,7 @@ public class MainActivity extends Activity {
 	      
 	      Editor editor = preferences.edit();
 	      editor.putString("srv", s);
+		  editor.putString("BiB", BingoBela);
 //	      editor.putString("frm", f);
 //	      editor.putString("god", g);
 
