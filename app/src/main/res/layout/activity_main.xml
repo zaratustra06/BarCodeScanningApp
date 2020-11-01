@@ -28,16 +28,33 @@
 
     <EditText
         android:id="@+id/editTextServer"
-        android:layout_width="wrap_content"
+        android:layout_width="232dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:ems="10"
+        android:text="epidemic666.dynu.com"
         android:textIsSelectable="true"
-        tools:text="epidemic666.dynu.com"
-        android:text="epidemic666.dynu.com">
+        tools:text="epidemic666.dynu.com">
 
         <requestFocus />
     </EditText>
+
+    <CheckBox
+        android:id="@+id/checkBoxVPN"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:checked="true"
+        android:text="Virtualna?" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:text="Bingo" />
 
 </RelativeLayout>
