@@ -10,7 +10,9 @@ import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -30,6 +32,7 @@ import android.support.v4.app.NavUtils;
         public  String barkod = "";
         public String scanContent = "";
        public final static String PROSLIJEDI_BARKOD = "";
+       String BingoBela ="";
 
         SharedPreferences preferences;
 
@@ -49,6 +52,20 @@ import android.support.v4.app.NavUtils;
 
             scanBtn.setOnClickListener(this);
             stanjeBtn.setOnClickListener(this);
+
+            final Switch sw = findViewById(R.id.switch2);
+            if (sw != null) {
+                sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        String msg = isChecked ? "Bela" : "Bingo";
+                        Toast.makeText(BarCodeScanning.this, msg, Toast.LENGTH_SHORT).show();
+                        sw.setText(msg);
+                        BingoBela = isChecked ?  "Bela" : "Bingo";
+                    }
+                });
+            }
+
         }
 
         @Override
@@ -86,6 +103,7 @@ import android.support.v4.app.NavUtils;
                 preferences = getSharedPreferences("text", 0);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("barkod", scanContent);
+                editor.putString("BiB", BingoBela);
                 editor.commit();
 
                 Intent intent = new Intent(this, com.example.jasmin.barcodescanningapp.StanjeProvjera.class);
@@ -120,5 +138,7 @@ import android.support.v4.app.NavUtils;
                 toast.show();
             }
         }
+
+
     }
 

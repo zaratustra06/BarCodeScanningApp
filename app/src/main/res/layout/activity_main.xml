@@ -49,12 +49,4 @@
         android:checked="true"
         android:text="Virtualna?" />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="138dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
-        android:text="Bingo" />
-
 </RelativeLayout>

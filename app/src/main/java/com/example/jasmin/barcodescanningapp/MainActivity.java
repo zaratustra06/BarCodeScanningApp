@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 	
 	public final static String PROSLIJEDI_SERVER = "";
-	String BingoBela ="";
+//	String BingoBela ="";
 //	public final static String PROSLIJEDI_FIRMU = "";
 
 	
@@ -70,18 +70,18 @@ public class MainActivity extends Activity {
 //		    godina.setText(valueGodina);
 //		}
 
-		final Switch sw = findViewById(R.id.switch1);
-		if (sw != null) {
-			sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-				@Override
-				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-					String msg = isChecked ? "Bela" : "Bingo";
-					Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-					sw.setText(msg);
-					BingoBela = isChecked ?  "Bela" : "Bingo";
-				}
-			});
-		}
+//		final Switch sw = findViewById(R.id.switch1);
+//		if (sw != null) {
+//			sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//				@Override
+//				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//					String msg = isChecked ? "Bela" : "Bingo";
+//					Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+//					sw.setText(msg);
+//					BingoBela = isChecked ?  "Bela" : "Bingo";
+//				}
+//			});
+//		}
 
 
 	}
@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
 	      
 	      Editor editor = preferences.edit();
 	      editor.putString("srv", s);
-		  editor.putString("BiB", BingoBela);
+//		  editor.putString("BiB", BingoBela);
 //	      editor.putString("frm", f);
 //	      editor.putString("god", g);
 
