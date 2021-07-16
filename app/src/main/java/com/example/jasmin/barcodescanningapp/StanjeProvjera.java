@@ -68,7 +68,7 @@ public class StanjeProvjera extends Activity {
 
        }
        else {
-          url1 = "http://"+ server +":8001/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=192.168.1.150;user%20id=spin;password=SulciC21%27).Spin.dbo.Stanje%20WHERE%20ArKod%20=%20%27" + BarKod + "%27%20order%20by%20Obj";
+          url1 = "http://"+ server +"/test.aspx?query=SELECT%20*%20FROM%20OPENDATASOURCE(%27SQLNCLI%27,%27Data%20Source=192.168.1.150;user%20id=spin;password=SulciC21%27).Spin.dbo.Stanje%20WHERE%20ArKod%20=%20%27" + BarKod + "%27%20order%20by%20Obj";
       }
 
         obj = new HandleJSONStanjeProvjera(url1);
